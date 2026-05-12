@@ -8,9 +8,9 @@ public class PrintAllSubArrays {
         int n = arr.size();
         //outer loop for finding the starting index
         for(int i = 0; i<n;i++){
-        // middle loop for finding the ending inndex
+        // middle loop for finding the ending index
         for(int j=i;j<n;j++){
-        // outer loop fr prinying the values between the starting and ending index
+        // outer loop fr printing the values between the starting and ending index
         for(int k= i;k<=j;k++){
             System.out.println(arr.get(k)+ " ");
 
