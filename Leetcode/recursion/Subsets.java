@@ -1,0 +1,58 @@
+package recursion;
+
+import java.util.*;
+
+//Leetcode 78 - subsets
+public class Subsets {
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(
+                nums,
+                0,
+                new ArrayList<>(),
+                result
+
+        );
+        return result;
+
+    }
+
+    public void backtrack(
+            int[] nums,
+            int index,
+            List<Integer> current,
+            List<List<Integer>> result) {
+        if (index == nums.length) {
+            result.add(new ArrayList<>(current));
+            return;
+
+        }
+
+        // condition 1 to include the current number
+        current.add(nums[index]);
+
+        backtrack(
+                nums,
+                index + 1,
+                current,
+                result);
+        // backtrack undo the previous task
+        current.remove(current.size() - 1);
+
+        // condition to not include the current number
+        backtrack(
+                nums,
+                index + 1,
+                current,
+                result);
+
+    }
+
+    public static void main(String args[]) {
+        Subsets solution = new Subsets();
+        int[] nums = { 1, 2, 3 };
+        List<List<Integer>> result = solution.subsets(nums);
+        System.out.println(result);
+    }
+
+}
