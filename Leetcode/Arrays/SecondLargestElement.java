@@ -18,7 +18,7 @@ public class SecondLargestElement {
         //     }
            
         //  }
-        //   return -1;
+        //   return -1;  Time complexity will be  O(nlog(n))
 
         /// better approach using the two pass method
         int largest = -1; 
@@ -37,6 +37,7 @@ public class SecondLargestElement {
             }
         }
         return secondLargest;
+        // Time complexity will be O(2*n)
     }
     public static void main(String args[]){
         int[] arr={10, 2,30, 35,15,21};
